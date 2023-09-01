@@ -16,22 +16,30 @@
   <div class="container p-5">
 
     <!-- Input despacho-->
-
-    <div class=" input-group">
+    <div class=" input-group gap-2">
       <input type="text" class="form-control" placeholder="N° de despacho"
         aria-label="Recipient's username with two button addons" id="input-despacho">
 
-      <!-- Input puerto-->
+      <!-- Input Cliente-->
+      <select class="form-select" aria-label="Default select example" id="input-cliente">
+        <option value="">Cliente</option>
+      </select>
 
+      <!-- Input puerto-->
       <select class="form-select" aria-label="Default select example" id="input-puerto">
+        <option value="">Puerto</option>
         <option value="Valparaiso">Valparaiso</option>
         <option value="San Antonio">San Antonio</option>
       </select>
+
+      <!-- Input ETA-->
+      <input type="date" class="form-control" id="input-eta" name="fecha">
+
+      <!-- SEND button-->
       <button class="btn btn-outline-secondary" type="button" id="add-btn">Add</button>
     </div>
 
 
-    <hr>
 
     <!-- Renderizando resultados-->
 
@@ -39,21 +47,17 @@
       <thead>
         <tr>
           <th scope="col">Despacho</th>
+          <th scope="col">Cliente</th>
           <th scope="col">Puerto</th>
+          <th scope="col">ETA</th>
         </tr>
       </thead>
-
-
-      <tbody>
-        <tr id="my-list">
-        </tr>
-      </tbody>
-
+      <tbody id="my-list"></tbody>
     </table>
   </div>
 
 
-  <script src="./main.js"></script>
+  <script src="./assets/js/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
     integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
     crossorigin="anonymous"></script>
