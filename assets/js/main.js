@@ -1,10 +1,9 @@
+import clientsData from './data/clients_data.js';
 
 
 const getDispach = document.getElementById('input-despacho');
-const getClient = document.getElementById('input-cliente');
 const getPort = document.getElementById('input-puerto');
 const getEta = document.getElementById('input-eta')
-
 const getAddButton = document.getElementById('add-btn');
 const getList = document.getElementById('my-list');
 
@@ -12,7 +11,7 @@ const getList = document.getElementById('my-list');
 
 let operations = [];
 
-//*Template
+//*!TEMPLATE
 
 const updatelist = () => {
   let html = '';
@@ -32,6 +31,19 @@ const updatelist = () => {
 
 }
 
+//! AGREGANDO EL KEY CLIENTES DE NUESTRO ARRAY DE OBJETOS 
+
+const getClient = document.querySelector('#input-cliente');
+
+clientsData.forEach(client => {
+  const option = document.createElement('option');
+  option.value = client.name;
+  option.text = client.name;
+  getClient.appendChild(option);
+});
+
+//! AGREGANDO UNA NUEVA OPERACIÓN AL DOM
+
 const agregarOperacion = () => {
   const newDispach = getDispach.value;
   const newCliente = getClient.value;
@@ -46,17 +58,7 @@ const agregarOperacion = () => {
   })
 
   updatelist();
-  getDespacho.value = '';
+  getDispach.value = '';
 }
 
 getAddButton.addEventListener('click', agregarOperacion);
-
-
-
-
-
-
-
-
-
-
