@@ -1,5 +1,30 @@
 import clientsData from './data/clients_data.js';
 
+//* Consumiendo API https://mindicador.cl/
+
+
+const dailyIndicators = async() => {
+  try{
+    const response = await fetch('https://mindicador.cl/api');
+    const data = await response.json();
+
+    const usdElement = document.getElementById('usd');
+
+    const dolarData = data.dolar;
+
+    if (dolarData && dolarData.valor) {
+      const html = `<p><i class="fa-solid fa-dollar-sign mx-2 text-success"></i>${ dolarData.valor }</p>`;
+      usdElement.innerHTML = html;
+    } else {
+      throw new Error('Data structure is not as expected');
+    }
+
+  }catch (error){
+    console.error('Error:', error)
+  } 
+};
+
+dailyIndicators();
 
 const getDispach = document.getElementById('input-despacho');
 const getPort = document.getElementById('input-puerto');
@@ -62,3 +87,4 @@ const agregarOperacion = () => {
 }
 
 getAddButton.addEventListener('click', agregarOperacion);
+

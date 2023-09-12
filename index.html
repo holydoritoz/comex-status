@@ -5,15 +5,26 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Gestor de Comex</title>
+
+        <!-- Bootstrap CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+      <!-- Font-Awesome personal KIT -->
+  <script src="https://kit.fontawesome.com/faed31811b.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
 
   <div class="container p-5">
+
+    <!-- API's-->
+    <div class="daily-indicators d-flex gap-5">
+      <span id="usd"></span>
+      <span id="eur"><i class="fa-solid fa-euro-sign"></i></span>
+    </div>
 
     <!-- Input despacho-->
     <div class=" input-group gap-2">
